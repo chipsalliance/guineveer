@@ -366,3 +366,9 @@ signals:
   - {bound: ['6', '0'], name: dmi_uncore_addr}
   - {bound: ['31', '0'], name: dmi_uncore_wdata}
   - {name: dmi_active}
+
+existing_iface_definitions:
+- library: libdefault
+  name: el2_mem_if
+  vendor: vendor
+  version: '0.1'
