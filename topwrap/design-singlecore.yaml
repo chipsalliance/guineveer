@@ -169,4 +169,9 @@ extensions:
       - filename: "guineveer.repl"
         filter: ["i3c_core"]
         includes: ["guineveer_common.repl"]
+  renode_resc:
+    cpus:
+      - [rvtop_wrapper0, "../sw/build/core0/uart.elf"]
+    analyze: [uart_core]
+    features: [ no_run, mem_mailbox, reset_macro ]
 

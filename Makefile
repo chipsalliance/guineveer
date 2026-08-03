@@ -64,6 +64,11 @@ TW_PARSE_FLAGS = \
 
 TW_AXI_PREREQ_SRCS = $(BUILD_DIR)/axi/src/axi_pkg.sv $(wildcard $(AXI_INCLUDE_PATH)/axi/*.svh)
 
+# Renode script/platform description for simulations
+RENODE_TEST_SRC = $(SCRIPT_DIR)/tests/renode/guineveer.repl \
+									$(SCRIPT_DIR)/tests/renode/guieneveer_common.repl \
+									$(SCRIPT_DIR)/tests/renode/guineveer.resc
+
 all: testbench
 
 clean: | $(BUILD_DIR)
@@ -88,10 +93,10 @@ $(HEX_FILE_CORE0) $(ELF_FILE_CORE0):
 $(HEX_FILE_CORE1) $(ELF_FILE_CORE1):
 	TEST=$(TEST) CORE=core1 $(MAKE) -f $(SCRIPT_DIR)/tests/sw/Makefile build
 
-$(SCRIPT_DIR)/tests/renode/guineveer.repl $(SCRIPT_DIR)/tests/renode/guieneveer_common.repl &: $(TW_DIR)/design-dualcore.yaml
-	mkdir -p $(HW_DIR)/tmp
-	topwrap build -d $(TW_DIR)/design-dualcore.yaml --build-dir $(HW_DIR)/tmp
-	mv $(HW_DIR)/tmp/*.repl $(SCRIPT_DIR)/tests/renode/
+$(RENODE_TEST_SRC) &: $(TW_DIR)/design-dualcore.yaml
+	mkdir -p $(SCRIPT_DIR)/build
+	topwrap build -d $(TW_DIR)/design-dualcore.yaml --build-dir $(SCRIPT_DIR)/build
+	cp $(SCRIPT_DIR)/build/*.repl $(SCRIPT_DIR)/build/*.resc $(SCRIPT_DIR)/tests/renode/
 
 $(HW_DIR)/guineveer.sv: $(SOC_WRAPPER_DEPS) $(VERILOG_CORE_SOURCES) $(VERILOG_INCLUDE_DIRS)
 # Input sync FFs are needed on FPGAs, as the option to disable them is only intended to be used on ASICs.
@@ -159,7 +164,7 @@ $(BUILD_DIR)/obj_dir/Vguineveer_tb: $(TB_FILES) $(TB_INCLS) $(TB_CPPS) | $(BUILD
 $(BUILD_DIR):
 	mkdir -p $@
 
-$(BUILD_DIR)/report.html: $(ELF_FILE_CORE0) $(ELF_FILE_CORE1) $(BUILD_DIR) $(SCRIPT_DIR)/tests/renode/guieneveer_common.repl $(SCRIPT_DIR)/tests/renode/guieneveer_common.repl
+$(BUILD_DIR)/report.html: $(ELF_FILE_CORE0) $(ELF_FILE_CORE1) $(BUILD_DIR) $(RENODE_TEST_SRC)
 ifneq ($(filter i3c_cosim axi-streaming-boot-dualcore,$(RENODE_TEST)),)
 	make -C $(SCRIPT_DIR)/tests/renode/renode_i3c_cosim
 endif

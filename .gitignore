@@ -9,6 +9,7 @@ tests/**/*.vcd
 tests/**/*.fst
 tests/**/*.xml
 tests/**/coverage.dat
+tests/renode/guineveer.resc
 tests/renode/guineveer.repl
 tests/renode/guineveer_common.repl
 
