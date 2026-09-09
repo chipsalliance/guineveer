@@ -1,9 +1,13 @@
 build/
 venv/
+.venv/
 __pycache__
 .python-version
 sim-build*
 *.egg-info
+
+# Downloaded FuseSoC libraries
+/.fusesoc-cores/
 
 tests/**/*.vcd
 tests/**/*.fst
@@ -16,7 +20,32 @@ tests/renode/guineveer_common.repl
 design/src/axi_intercon.sv
 design/src/guineveer.sv
 design/src/guineveer.sv.bak
+design/src/guineveer.core
+design/guineveer.repl
+design/guineveer_common.repl
+design/guineveer.resc
 
 design/fpga/vivado*
 design/fpga/guineveer/
 design/fpga/guineveer.tcl
+
+# Simulation and CI output
+/sim.vcd
+/dump.fst
+/coverage.dat
+/console.log
+/trace_port.csv
+/log.html
+/report.html
+/robot_output.xml
+/.results/
+/sim_binaries/
+/core0/
+/core1/
+
+# Vivado working files and crash reports
+.Xil/
+vivado*.jou
+vivado*.log
+vivado_pid*.str
+hs_err_pid*.log

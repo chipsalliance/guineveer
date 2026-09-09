@@ -1,8 +1,5 @@
-import yaml
 import csv
-import os
 from pathlib import Path
-from typing import Union
 
 from topwrap.cli import load_modules_from_repos
 from topwrap.frontend.yaml.frontend import YamlFrontend
@@ -48,8 +45,6 @@ def design_component_to_mmap_name(name: str) -> str:
 
 
 def generate_map(design_file: Path, output: Path):
-    frontend = YamlFrontend()
-
     repo_modules, _ = load_modules_from_repos()
 
     frontend = YamlFrontend(repo_modules)
@@ -92,11 +87,13 @@ def generate_map(design_file: Path, output: Path):
 
 
 if __name__ == "__main__":
+    docs_dir = Path(__file__).resolve().parent
+    designs_dir = docs_dir.parent / "topwrap"
     generate_map(
-        Path("../topwrap/design-dualcore.yaml"),
-        Path("build/memory_map_dualcore.csv")
+        designs_dir / "design-dualcore.yaml",
+        docs_dir / "build/memory_map_dualcore.csv",
     )
     generate_map(
-        Path("../topwrap/design-singlecore.yaml"),
-        Path("build/memory_map_singlecore.csv")
+        designs_dir / "design-singlecore.yaml",
+        docs_dir / "build/memory_map_singlecore.csv",
     )

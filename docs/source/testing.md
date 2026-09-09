@@ -38,6 +38,24 @@ Software tests can be run in multiple ways:
 
 Running the test software using each of the available methods is described in the [User guide](user_guide.md#running-an-example-sw-using-the-testbench)
 
+## Cocotb tests
+
+Run these commands from the repository root. The Makefile prepares the FuseSoC
+source list and test firmware before launching Cocotb.
+
+```sh
+make cocotb COCOTB_TEST=uart
+make cocotb COCOTB_TEST=i3c
+make cocotb DESIGN=dualcore COCOTB_TEST=axi-streaming-boot-dualcore
+```
+
+The default suite is UART. Set `COCOTB_TESTCASE` to a test function name
+to run one case from the selected suite. JUnit results are written to
+`tests/cocotb/<suite-directory>/results/all.xml` for a full suite or
+`tests/cocotb/<suite-directory>/results/<testcase>.xml` for one case.
+The suite directories are `uart_core_ahb`, `i3c` and
+`streaming-boot-axi-dualcore`, respectively.
+
 ## FPGA tests
 ## Supported FPGA boards
 * [Arty A7-100T](https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/) is an FPGA development board based on the Xilinx Artix-7 FPGA.

@@ -1,0 +1,16 @@
+CAPI=2:
+name: ::guineveer_tb:0.1
+description: Guineveer simulation testbench
+filesets:
+  rtl:
+    depend:
+    - "::guineveer"
+    - antmicro.com:topwrap-cores:el2_testbench:0.1
+    files:
+    - defines.sv: {file_type: systemVerilogSource}
+    - guineveer_tb.sv: {file_type: systemVerilogSource}
+targets:
+  default:
+    filesets: [rtl]
+    toplevel: guineveer_tb
+    default_tool: verilator

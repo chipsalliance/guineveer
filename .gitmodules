@@ -1,19 +1,8 @@
-[submodule "third_party/Cores-VeeR-EL2"]
-	path = third_party/Cores-VeeR-EL2
-	url = https://github.com/chipsalliance/Cores-VeeR-EL2.git
-	branch = main
-	shallow = true
-[submodule "third_party/caliptra-rtl"]
-	path = third_party/caliptra-rtl
-	url = https://github.com/chipsalliance/caliptra-rtl.git
-	shallow = true
-[submodule "third_party/axi"]
-	path = third_party/axi
-	url = https://github.com/pulp-platform/axi.git
-	shallow = true
-[submodule "third_party/i3c-core"]
-	path = third_party/i3c-core
-	url = https://github.com/antmicro/i3c-core.git
 [submodule "third_party/renode"]
 	path = third_party/renode
 	url = https://github.com/renode/renode
+[submodule "third_party/Cores-VeeR-EL2"]
+      path = third_party/Cores-VeeR-EL2
+      url = https://github.com/chipsalliance/Cores-VeeR-EL2.git
+      branch = main
+      shallow = true

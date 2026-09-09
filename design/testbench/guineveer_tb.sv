@@ -19,7 +19,9 @@
 
 `define COMMON_CELLS_ASSERTS_OFF
 
-module guineveer_tb #(
+module guineveer_tb
+  import el2_pkg::*;
+#(
     parameter int MAX_CYCLES = 100_000_000,
     `include "el2_param.vh"
 ) ();

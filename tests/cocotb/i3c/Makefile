@@ -5,7 +5,6 @@ TOPLEVEL = guineveer_cocotb_dut
 
 SCRIPT_DIR := $(abspath ${CURDIR}/../../../)
 
-include $(SCRIPT_DIR)/design/src/rtl.mk
 
 VERILOG_SOURCES += $(abspath $(SCRIPT_DIR)/design/testbench/guineveer_cocotb_dut.sv)
 
@@ -16,6 +15,6 @@ HEX_FILE1 ?= $(abspath ${CURDIR}/../sw/build/core1/i3c-cocotb.hex)
 COMPILE_ARGS += +define+HEX_FILE0='"'$(HEX_FILE0)'"'
 COMPILE_ARGS += +define+HEX_FILE1='"'$(HEX_FILE1)'"'
 
-VERILATOR_SKIP_WARNINGS = -Wno-REDEFMACRO
+VERILATOR_SKIP_WARNINGS = -Wno-REDEFMACRO -Wno-DEFOVERRIDE
 
 include $(CURDIR)/../common.mk

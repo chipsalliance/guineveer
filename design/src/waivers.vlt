@@ -5,12 +5,7 @@
 
 // Waivers for third-party code.
 
-// Silence all lints in third-party code.
-lint_off -file "*/third_party/*"
-lint_off -file "*/build/axi/*"
-
-// MULTIDRIVEN needs to be turned off explicitly.
-lint_off -rule MULTIDRIVEN -file "*/third_party/caliptra-rtl/src/axi/rtl/axi_if.sv"
+lint_off -file "*/antmicro.com_topwrap-cores_el2_testbench_0.1/*" -match "*"
 
 // SIDEEFFECT needs to be turned off explicitly.
 lint_off -rule SIDEEFFECT -file "*/third_party/Cores-VeeR-EL2/design/lib/axi4_to_ahb.sv"
@@ -33,5 +28,3 @@ lint_off -rule PINMISSING -file "*/guineveer.sv"
 // This is caused by the AXI interface being given a 32-bit address, while the
 // SRAM only needing 17 address bits.
 lint_off -rule WIDTHTRUNC -file "*/sram_wrapper.sv" -lines 19
-
-lint_off -rule SYMRSVDWORD -file "*/third_party/i3c-core/src/i3c_pkg.sv"

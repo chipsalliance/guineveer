@@ -1,21 +1,35 @@
 # Copyright (c) 2025-2026 Antmicro <www.antmicro.com>
 # SPDX-License-Identifier: Apache-2.0
 
-TEST_DIRS = uart_core_ahb i3c streaming-boot-axi-dualcore
-TEST_RESULTS = $(addsuffix /results.xml,${TEST_DIRS})
+ALL_TEST_DIRS := uart_core_ahb i3c streaming-boot-axi-dualcore
+ifneq ($(strip $(COCOTB_TEST)),)
+ifeq ($(filter $(COCOTB_TEST),$(ALL_TEST_DIRS)),)
+$(error Unknown COCOTB_TEST: $(COCOTB_TEST))
+endif
+TEST_DIRS := $(COCOTB_TEST)
+else
+TEST_DIRS := $(ALL_TEST_DIRS)
+endif
+
+RESULT_NAME := $(if $(strip $(COCOTB_TESTCASE)),$(COCOTB_TESTCASE),all)
+TEST_RESULTS := $(addsuffix /results/$(RESULT_NAME).xml,$(TEST_DIRS))
 
 verify: venv $(TEST_RESULTS)
 	. venv/bin/activate;\
 	junitparser verify $(TEST_RESULTS)
 
-$(TEST_RESULTS): venv
+$(TEST_RESULTS): venv FORCE
+	mkdir -p $(dir $@)
 	. venv/bin/activate;\
-	$(MAKE) -C $(@D) all \
+	$(MAKE) -C $(patsubst %/results/,%,$(dir $@)) all \
 		COVERAGE_TYPE=branch \
-		COCOTB_RESULTS_FILE="results.xml";
+		TESTCASE="$(COCOTB_TESTCASE)" \
+		COCOTB_RESULTS_FILE="results/$(RESULT_NAME).xml";
+
+FORCE:
 
 clean:
-	-rm -r venv build *.egg-info */dump.fst */results.xml */coverage.dat */sim-build-*
+	-rm -r venv build *.egg-info */dump.fst */results.xml */results */coverage.dat */sim-build-*
 
 venv: venv/touchfile
 venv/touchfile: pyproject.toml
@@ -26,4 +40,4 @@ venv/touchfile: pyproject.toml
 dirs:
 	echo $(TEST_DIRS)
 
-.PHONY: all test venv clean dirs verify
+.PHONY: all test venv clean dirs verify FORCE
