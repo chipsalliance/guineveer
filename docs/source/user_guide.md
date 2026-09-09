@@ -23,16 +23,11 @@ Currently available options:
 
 By default, `singlecore` is used.
 
-## Topwrap user repository
+## Topwrap libraries
 
-Guineveer includes a pre-made Topwrap repository containing IP core description files as well as the necessary interface definitions.
-The IP core files were generated using `topwrap repo parse`, then refined into their current versions by adding information about clocks and resets, default values for input ports, etc.
-The `regenerate_tw_repo` Makefile target can be used to regenerate the repo contents.
-
-~~~{warning}
-Regenerating the repo contents will lose all the changes made to the IP core files.
-Without further changes, this will break the designs, since they depend on the IP core files containing information such as clocks and resets, etc.
-~~~
+Guineveer uses IP core and interface definitions from `topwrap-cores`.
+The libraries are configured in `topwrap.yaml` and updated by the Makefile using `topwrap library update`.
+FuseSoC resolves their RTL dependencies and exports the source lists used by the builds.
 
 ## Building the testbench simulation
 
@@ -48,11 +43,10 @@ Remember to change the addresses to comply with the address range required by \\
 
 ## Building designs for FPGA
 
-* The defined `HEX_FILE0` and `HEX_FILE1` need to point to the path where firmware for each core is stored - you can update this in `guineveer.tcl`.
-    The HEX files are set automatically in the Makefile; using the `TEST` variable, you can select the files for a test, the same way as with building the software (`make build test`).
-* To generate the `tcl` file, run `BOARD=<board> make generate_block_design`, in the `fpga/` folder.
+* From the repository root, run `make fpga BOARD=<board> TEST=<test>` to build the firmware, export the RTL sources, and generate `design/fpga/guineveer.tcl`.
+* To use existing firmware, run `make fpga_no_sw BOARD=<board> HEX_FILE_CORE0=/path/to/core0.hex HEX_FILE_CORE1=/path/to/core1.hex` from the repository root.
     The supported boards are `NexysVideo-A7-200T` and `Arty-A7-100T`.
-* To synthesize Guineveer using Vivado, run `vivado -mode batch -script guineveer.tcl`.
+* To synthesize Guineveer using Vivado, run `vivado -mode batch -script design/fpga/guineveer.tcl` from the repository root.
 
 ## Running an example SW using the testbench
 

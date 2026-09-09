@@ -1,2 +1,3 @@
-repositories:
-  repo: file:../topwrap/repo
+skip_library_origin_check: True
+libraries:
+  topwrap_cores: https://dev.antmicro.com/git/topwrap-cores.git

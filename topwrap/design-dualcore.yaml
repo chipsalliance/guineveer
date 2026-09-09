@@ -25,7 +25,7 @@ reset_domains:
 connections:
   interfaces:
     i3c_core:
-      axi: [i_axi_cdc_lsu, m_axi_dst]
+      AXI4: [i_axi_cdc_lsu, m_axi_dst]
     uart_core:
       ahb: [axi_bridge, ahb]
     rvtop_wrapper0:
@@ -108,7 +108,7 @@ external:
     
 ips:
   i_axi_cdc_lsu:
-    file: repo[repo]:axi_cdc_wrapper
+    core: antmicro.com:topwrap-cores:axi_cdc_wrapper:0.1
     parameters:
       ID_WIDTH: 5
     clocks:
@@ -119,76 +119,76 @@ ips:
       dst: i3c
 
   lmem0:
-    file: repo[repo]:sram_wrapper
+    core: antmicro.com:topwrap-cores:sram_wrapper:0.1
     parameters:
       GUINEVEER_MEMORY_FILE: "`HEX_FILE0"
       ID_WIDTH: 5
 
   lmem1:
-    file: repo[repo]:sram_wrapper
+    core: antmicro.com:topwrap-cores:sram_wrapper:0.1
     parameters:
       GUINEVEER_MEMORY_FILE: "`HEX_FILE1"
       ID_WIDTH: 5
 
   axi_bridge:
-    file: repo[repo]:axi4_to_ahb
+    core: axi4_to_ahb
     parameters:
       TAG: 5
 
   rvtop_wrapper0:
-    file: repo[repo]:el2_veer_wrapper
+    core: antmicro.com:topwrap-cores:el2_veer_wrapper:0.1
     resets:
       cpu: cpu
       dbg: cpu
 
   rvtop_wrapper1:
-    file: repo[repo]:el2_veer_wrapper
+    core: antmicro.com:topwrap-cores:el2_veer_wrapper:0.1
     resets:
       cpu: cpu
       dbg: cpu
 
   i3c_core:
-    file: repo[repo]:i3c_wrapper
+    core: antmicro.com:topwrap-cores:i3c_axi_controller_target:0.1
     parameters:
       AxiAddrWidth: 32
       AxiDataWidth: 64
       AxiUserWidth: 1
       AxiIdWidth: 5
     clocks:
-      i3c: i3c
+      clk: i3c
     resets:
-      i3c: i3c
+      rst: i3c
 
   uart_core:
-    file: repo[repo]:uart_wrapper
+    core: antmicro.com:topwrap-cores:uart_wrapper:0.1
 
 extensions:
   renode_peripheral_gen:
     supported_peripherals:
       - target:
           name: sram_wrapper
-          vendor: vendor
-          library: libdefault
+          vendor: antmicro.com
+          library: topwrap-cores
         renode_device: Memory.MappedMemory
         map:
           - { dest: "size", src: ".memory_map.size" }
       - target:
           name: "el2_veer_wrapper"
-          vendor: vendor
-          library: libdefault
+          vendor: antmicro.com
+          library: topwrap-cores
         renode_device: CPU.VeeR_EL2
         map:
           - { dest: "hartId", src: ".connections.core_id" }
       - target:
-          name: "i3c_wrapper"
-          vendor: vendor
-          library: libdefault
+          name: "i3c_axi_controller_target"
+          vendor: antmicro.com
+          library: topwrap-cores
         renode_device: I3C.Chipsalliance_I3C
       - target:
           name: "uart_wrapper"
-          vendor: vendor
-          library: libdefault
-          version: '1.0'
+          vendor: antmicro.com
+          library: topwrap-cores
+          version: '0.1'
         renode_device: UART.OpenTitan_UART
     output:
       - filename: "guineveer_common.repl"

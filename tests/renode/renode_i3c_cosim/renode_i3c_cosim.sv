@@ -72,7 +72,7 @@ module sim;
   wire sda_oe;
   wire sel_od_pp_o;
 
-  i3c_wrapper #(
+  `RENODE_I3C_WRAPPER #(
       .AxiAddrWidth(AXIAddrWidth),
       .AxiDataWidth(AXIDataWidth),
       .AxiUserWidth(1),

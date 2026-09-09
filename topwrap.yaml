@@ -1,2 +1,5 @@
-repositories:
-  repo: file:topwrap/repo
+skip_library_origin_check: true
+libraries:
+  topwrap_cores: https://github.com/antmicro/topwrap-cores
+  pulp_axi: https://github.com/antmicro/axi.git@8d384f7e6ef4907dc8ad97bc694481e0b2ba12d7
+  pulp_common_cells: https://github.com/pulp-platform/common_cells.git@1281545696eb3fcba50ec5b4275993476a3c710e

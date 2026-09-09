@@ -54,12 +54,15 @@ done
 # Top-level wrapper
 echo "import_files -fileset sources_1 $SCRIPT_DIR/top.sv"
 
-# Manually import el2_mem_if because it's not loaded (all files from the el2_mem_if are imported though)
-echo "import_files -fileset sources_1 ${RV_ROOT}/design/lib/el2_mem_if.sv"
-
-# Import i3c_sva.svh so all i3c-core files (e.g. bus_rx_flow.sv, recovery_receiver.sv)
-# can resolve the `I3C_ASSERT macros without per-file includes.
-echo "import_files -fileset sources_1 $(realpath $SCRIPT_DIR/../../third_party/i3c-core/src/libs/i3c_sva.svh)"
+# FuseSoC lists include directories rather than individual include files in .vc.
+# Import headers so Vivado can apply the global-include properties below.
+for dir in $INCLUDE_DIRS; do
+  for header in "$dir"/*.vh "$dir"/*.svh; do
+    if [ -f "$header" ]; then
+      echo "import_files -fileset sources_1 ${header}"
+    fi
+  done
+done
 
 # 6. Import constraints
 echo "import_files -fileset constrs_1 $SCRIPT_DIR/constrs/$CONSTR"
