@@ -21,7 +21,7 @@
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HADDR</ipxact:name>
+                                <ipxact:name>haddr</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>haddr_i</ipxact:name>
@@ -29,7 +29,7 @@
                         </ipxact:portMap>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HSIZE</ipxact:name>
+                                <ipxact:name>hsize</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>hsize_i</ipxact:name>
@@ -37,7 +37,7 @@
                         </ipxact:portMap>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HTRANS</ipxact:name>
+                                <ipxact:name>htrans</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>htrans_i</ipxact:name>
@@ -45,7 +45,7 @@
                         </ipxact:portMap>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HWDATA</ipxact:name>
+                                <ipxact:name>hwdata</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>hwdata_i</ipxact:name>
@@ -53,7 +53,7 @@
                         </ipxact:portMap>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HWRITE</ipxact:name>
+                                <ipxact:name>hwrite</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>hwrite_i</ipxact:name>
@@ -61,7 +61,7 @@
                         </ipxact:portMap>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HRDATA</ipxact:name>
+                                <ipxact:name>hrdata</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>hrdata_o</ipxact:name>
@@ -69,7 +69,7 @@
                         </ipxact:portMap>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
-                                <ipxact:name>HRESP</ipxact:name>
+                                <ipxact:name>hresp</ipxact:name>
                             </ipxact:logicalPort>
                             <ipxact:physicalPort>
                                 <ipxact:name>hresp_o</ipxact:name>

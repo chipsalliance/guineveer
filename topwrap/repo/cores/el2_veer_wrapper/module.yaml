@@ -22,46 +22,46 @@ interfaces:
     reset: cpu
     signals:
       in:
-        ARREADY: {name: ifu_axi_arready}
-        AWREADY: {name: ifu_axi_awready}
-        BID: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_bid}
-        BRESP: {bound: ['1', '0'], name: ifu_axi_bresp}
-        BVALID: {name: ifu_axi_bvalid}
-        RDATA: {bound: ['63', '0'], name: ifu_axi_rdata}
-        RID: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_rid}
-        RLAST: {name: ifu_axi_rlast}
-        RRESP: {bound: ['1', '0'], name: ifu_axi_rresp}
-        RVALID: {name: ifu_axi_rvalid}
-        WREADY: {name: ifu_axi_wready}
+        arready: {name: ifu_axi_arready}
+        awready: {name: ifu_axi_awready}
+        bid: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_bid}
+        bresp: {bound: ['1', '0'], name: ifu_axi_bresp}
+        bvalid: {name: ifu_axi_bvalid}
+        rdata: {bound: ['63', '0'], name: ifu_axi_rdata}
+        rid: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_rid}
+        rlast: {name: ifu_axi_rlast}
+        rresp: {bound: ['1', '0'], name: ifu_axi_rresp}
+        rvalid: {name: ifu_axi_rvalid}
+        wready: {name: ifu_axi_wready}
       out:
-        ARADDR: {bound: ['31', '0'], name: ifu_axi_araddr}
-        ARBURST: {bound: ['1', '0'], name: ifu_axi_arburst}
-        ARCACHE: {bound: ['3', '0'], name: ifu_axi_arcache}
-        ARID: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_arid}
-        ARLEN: {bound: ['7', '0'], name: ifu_axi_arlen}
-        ARLOCK: {name: ifu_axi_arlock}
-        ARPROT: {bound: ['2', '0'], name: ifu_axi_arprot}
-        ARQOS: {bound: ['3', '0'], name: ifu_axi_arqos}
-        ARREGION: {bound: ['3', '0'], name: ifu_axi_arregion}
-        ARSIZE: {bound: ['2', '0'], name: ifu_axi_arsize}
-        ARVALID: {name: ifu_axi_arvalid}
-        AWADDR: {bound: ['31', '0'], name: ifu_axi_awaddr}
-        AWBURST: {bound: ['1', '0'], name: ifu_axi_awburst}
-        AWCACHE: {bound: ['3', '0'], name: ifu_axi_awcache}
-        AWID: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_awid}
-        AWLEN: {bound: ['7', '0'], name: ifu_axi_awlen}
-        AWLOCK: {name: ifu_axi_awlock}
-        AWPROT: {bound: ['2', '0'], name: ifu_axi_awprot}
-        AWQOS: {bound: ['3', '0'], name: ifu_axi_awqos}
-        AWREGION: {bound: ['3', '0'], name: ifu_axi_awregion}
-        AWSIZE: {bound: ['2', '0'], name: ifu_axi_awsize}
-        AWVALID: {name: ifu_axi_awvalid}
-        BREADY: {name: ifu_axi_bready}
-        RREADY: {name: ifu_axi_rready}
-        WDATA: {bound: ['63', '0'], name: ifu_axi_wdata}
-        WLAST: {name: ifu_axi_wlast}
-        WSTRB: {bound: ['7', '0'], name: ifu_axi_wstrb}
-        WVALID: {name: ifu_axi_wvalid}
+        araddr: {bound: ['31', '0'], name: ifu_axi_araddr}
+        arburst: {bound: ['1', '0'], name: ifu_axi_arburst}
+        arcache: {bound: ['3', '0'], name: ifu_axi_arcache}
+        arid: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_arid}
+        arlen: {bound: ['7', '0'], name: ifu_axi_arlen}
+        arlock: {name: ifu_axi_arlock}
+        arprot: {bound: ['2', '0'], name: ifu_axi_arprot}
+        arqos: {bound: ['3', '0'], name: ifu_axi_arqos}
+        arregion: {bound: ['3', '0'], name: ifu_axi_arregion}
+        arsize: {bound: ['2', '0'], name: ifu_axi_arsize}
+        arvalid: {name: ifu_axi_arvalid}
+        awaddr: {bound: ['31', '0'], name: ifu_axi_awaddr}
+        awburst: {bound: ['1', '0'], name: ifu_axi_awburst}
+        awcache: {bound: ['3', '0'], name: ifu_axi_awcache}
+        awid: {bound: [pt.IFU_BUS_TAG-1, '0'], name: ifu_axi_awid}
+        awlen: {bound: ['7', '0'], name: ifu_axi_awlen}
+        awlock: {name: ifu_axi_awlock}
+        awprot: {bound: ['2', '0'], name: ifu_axi_awprot}
+        awqos: {bound: ['3', '0'], name: ifu_axi_awqos}
+        awregion: {bound: ['3', '0'], name: ifu_axi_awregion}
+        awsize: {bound: ['2', '0'], name: ifu_axi_awsize}
+        awvalid: {name: ifu_axi_awvalid}
+        bready: {name: ifu_axi_bready}
+        rready: {name: ifu_axi_rready}
+        wdata: {bound: ['63', '0'], name: ifu_axi_wdata}
+        wlast: {name: ifu_axi_wlast}
+        wstrb: {bound: ['7', '0'], name: ifu_axi_wstrb}
+        wvalid: {name: ifu_axi_wvalid}
     type:
       library: libdefault
       name: AXI4
@@ -73,46 +73,46 @@ interfaces:
     reset: cpu
     signals:
       in:
-        ARREADY: {name: lsu_axi_arready}
-        AWREADY: {name: lsu_axi_awready}
-        BID: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_bid}
-        BRESP: {bound: ['1', '0'], name: lsu_axi_bresp}
-        BVALID: {name: lsu_axi_bvalid}
-        RDATA: {bound: ['63', '0'], name: lsu_axi_rdata}
-        RID: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_rid}
-        RLAST: {name: lsu_axi_rlast}
-        RRESP: {bound: ['1', '0'], name: lsu_axi_rresp}
-        RVALID: {name: lsu_axi_rvalid}
-        WREADY: {name: lsu_axi_wready}
+        arready: {name: lsu_axi_arready}
+        awready: {name: lsu_axi_awready}
+        bid: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_bid}
+        bresp: {bound: ['1', '0'], name: lsu_axi_bresp}
+        bvalid: {name: lsu_axi_bvalid}
+        rdata: {bound: ['63', '0'], name: lsu_axi_rdata}
+        rid: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_rid}
+        rlast: {name: lsu_axi_rlast}
+        rresp: {bound: ['1', '0'], name: lsu_axi_rresp}
+        rvalid: {name: lsu_axi_rvalid}
+        wready: {name: lsu_axi_wready}
       out:
-        ARADDR: {bound: ['31', '0'], name: lsu_axi_araddr}
-        ARBURST: {bound: ['1', '0'], name: lsu_axi_arburst}
-        ARCACHE: {bound: ['3', '0'], name: lsu_axi_arcache}
-        ARID: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_arid}
-        ARLEN: {bound: ['7', '0'], name: lsu_axi_arlen}
-        ARLOCK: {name: lsu_axi_arlock}
-        ARPROT: {bound: ['2', '0'], name: lsu_axi_arprot}
-        ARQOS: {bound: ['3', '0'], name: lsu_axi_arqos}
-        ARREGION: {bound: ['3', '0'], name: lsu_axi_arregion}
-        ARSIZE: {bound: ['2', '0'], name: lsu_axi_arsize}
-        ARVALID: {name: lsu_axi_arvalid}
-        AWADDR: {bound: ['31', '0'], name: lsu_axi_awaddr}
-        AWBURST: {bound: ['1', '0'], name: lsu_axi_awburst}
-        AWCACHE: {bound: ['3', '0'], name: lsu_axi_awcache}
-        AWID: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_awid}
-        AWLEN: {bound: ['7', '0'], name: lsu_axi_awlen}
-        AWLOCK: {name: lsu_axi_awlock}
-        AWPROT: {bound: ['2', '0'], name: lsu_axi_awprot}
-        AWQOS: {bound: ['3', '0'], name: lsu_axi_awqos}
-        AWREGION: {bound: ['3', '0'], name: lsu_axi_awregion}
-        AWSIZE: {bound: ['2', '0'], name: lsu_axi_awsize}
-        AWVALID: {name: lsu_axi_awvalid}
-        BREADY: {name: lsu_axi_bready}
-        RREADY: {name: lsu_axi_rready}
-        WDATA: {bound: ['63', '0'], name: lsu_axi_wdata}
-        WLAST: {name: lsu_axi_wlast}
-        WSTRB: {bound: ['7', '0'], name: lsu_axi_wstrb}
-        WVALID: {name: lsu_axi_wvalid}
+        araddr: {bound: ['31', '0'], name: lsu_axi_araddr}
+        arburst: {bound: ['1', '0'], name: lsu_axi_arburst}
+        arcache: {bound: ['3', '0'], name: lsu_axi_arcache}
+        arid: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_arid}
+        arlen: {bound: ['7', '0'], name: lsu_axi_arlen}
+        arlock: {name: lsu_axi_arlock}
+        arprot: {bound: ['2', '0'], name: lsu_axi_arprot}
+        arqos: {bound: ['3', '0'], name: lsu_axi_arqos}
+        arregion: {bound: ['3', '0'], name: lsu_axi_arregion}
+        arsize: {bound: ['2', '0'], name: lsu_axi_arsize}
+        arvalid: {name: lsu_axi_arvalid}
+        awaddr: {bound: ['31', '0'], name: lsu_axi_awaddr}
+        awburst: {bound: ['1', '0'], name: lsu_axi_awburst}
+        awcache: {bound: ['3', '0'], name: lsu_axi_awcache}
+        awid: {bound: [pt.LSU_BUS_TAG-1, '0'], name: lsu_axi_awid}
+        awlen: {bound: ['7', '0'], name: lsu_axi_awlen}
+        awlock: {name: lsu_axi_awlock}
+        awprot: {bound: ['2', '0'], name: lsu_axi_awprot}
+        awqos: {bound: ['3', '0'], name: lsu_axi_awqos}
+        awregion: {bound: ['3', '0'], name: lsu_axi_awregion}
+        awsize: {bound: ['2', '0'], name: lsu_axi_awsize}
+        awvalid: {name: lsu_axi_awvalid}
+        bready: {name: lsu_axi_bready}
+        rready: {name: lsu_axi_rready}
+        wdata: {bound: ['63', '0'], name: lsu_axi_wdata}
+        wlast: {name: lsu_axi_wlast}
+        wstrb: {bound: ['7', '0'], name: lsu_axi_wstrb}
+        wvalid: {name: lsu_axi_wvalid}
     type:
       library: libdefault
       name: AXI4
@@ -124,46 +124,46 @@ interfaces:
     reset: cpu
     signals:
       in:
-        ARREADY: {name: sb_axi_arready}
-        AWREADY: {name: sb_axi_awready}
-        BID: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_bid}
-        BRESP: {bound: ['1', '0'], name: sb_axi_bresp}
-        BVALID: {name: sb_axi_bvalid}
-        RDATA: {bound: ['63', '0'], name: sb_axi_rdata}
-        RID: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_rid}
-        RLAST: {name: sb_axi_rlast}
-        RRESP: {bound: ['1', '0'], name: sb_axi_rresp}
-        RVALID: {name: sb_axi_rvalid}
-        WREADY: {name: sb_axi_wready}
+        arready: {name: sb_axi_arready}
+        awready: {name: sb_axi_awready}
+        bid: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_bid}
+        bresp: {bound: ['1', '0'], name: sb_axi_bresp}
+        bvalid: {name: sb_axi_bvalid}
+        rdata: {bound: ['63', '0'], name: sb_axi_rdata}
+        rid: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_rid}
+        rlast: {name: sb_axi_rlast}
+        rresp: {bound: ['1', '0'], name: sb_axi_rresp}
+        rvalid: {name: sb_axi_rvalid}
+        wready: {name: sb_axi_wready}
       out:
-        ARADDR: {bound: ['31', '0'], name: sb_axi_araddr}
-        ARBURST: {bound: ['1', '0'], name: sb_axi_arburst}
-        ARCACHE: {bound: ['3', '0'], name: sb_axi_arcache}
-        ARID: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_arid}
-        ARLEN: {bound: ['7', '0'], name: sb_axi_arlen}
-        ARLOCK: {name: sb_axi_arlock}
-        ARPROT: {bound: ['2', '0'], name: sb_axi_arprot}
-        ARQOS: {bound: ['3', '0'], name: sb_axi_arqos}
-        ARREGION: {bound: ['3', '0'], name: sb_axi_arregion}
-        ARSIZE: {bound: ['2', '0'], name: sb_axi_arsize}
-        ARVALID: {name: sb_axi_arvalid}
-        AWADDR: {bound: ['31', '0'], name: sb_axi_awaddr}
-        AWBURST: {bound: ['1', '0'], name: sb_axi_awburst}
-        AWCACHE: {bound: ['3', '0'], name: sb_axi_awcache}
-        AWID: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_awid}
-        AWLEN: {bound: ['7', '0'], name: sb_axi_awlen}
-        AWLOCK: {name: sb_axi_awlock}
-        AWPROT: {bound: ['2', '0'], name: sb_axi_awprot}
-        AWQOS: {bound: ['3', '0'], name: sb_axi_awqos}
-        AWREGION: {bound: ['3', '0'], name: sb_axi_awregion}
-        AWSIZE: {bound: ['2', '0'], name: sb_axi_awsize}
-        AWVALID: {name: sb_axi_awvalid}
-        BREADY: {name: sb_axi_bready}
-        RREADY: {name: sb_axi_rready}
-        WDATA: {bound: ['63', '0'], name: sb_axi_wdata}
-        WLAST: {name: sb_axi_wlast}
-        WSTRB: {bound: ['7', '0'], name: sb_axi_wstrb}
-        WVALID: {name: sb_axi_wvalid}
+        araddr: {bound: ['31', '0'], name: sb_axi_araddr}
+        arburst: {bound: ['1', '0'], name: sb_axi_arburst}
+        arcache: {bound: ['3', '0'], name: sb_axi_arcache}
+        arid: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_arid}
+        arlen: {bound: ['7', '0'], name: sb_axi_arlen}
+        arlock: {name: sb_axi_arlock}
+        arprot: {bound: ['2', '0'], name: sb_axi_arprot}
+        arqos: {bound: ['3', '0'], name: sb_axi_arqos}
+        arregion: {bound: ['3', '0'], name: sb_axi_arregion}
+        arsize: {bound: ['2', '0'], name: sb_axi_arsize}
+        arvalid: {name: sb_axi_arvalid}
+        awaddr: {bound: ['31', '0'], name: sb_axi_awaddr}
+        awburst: {bound: ['1', '0'], name: sb_axi_awburst}
+        awcache: {bound: ['3', '0'], name: sb_axi_awcache}
+        awid: {bound: [pt.SB_BUS_TAG-1, '0'], name: sb_axi_awid}
+        awlen: {bound: ['7', '0'], name: sb_axi_awlen}
+        awlock: {name: sb_axi_awlock}
+        awprot: {bound: ['2', '0'], name: sb_axi_awprot}
+        awqos: {bound: ['3', '0'], name: sb_axi_awqos}
+        awregion: {bound: ['3', '0'], name: sb_axi_awregion}
+        awsize: {bound: ['2', '0'], name: sb_axi_awsize}
+        awvalid: {name: sb_axi_awvalid}
+        bready: {name: sb_axi_bready}
+        rready: {name: sb_axi_rready}
+        wdata: {bound: ['63', '0'], name: sb_axi_wdata}
+        wlast: {name: sb_axi_wlast}
+        wstrb: {bound: ['7', '0'], name: sb_axi_wstrb}
+        wvalid: {name: sb_axi_wvalid}
     type:
       library: libdefault
       name: AXI4
@@ -175,38 +175,38 @@ interfaces:
     reset: cpu
     signals:
       in:
-        ARADDR: {bound: ['31', '0'], name: dma_axi_araddr}
-        ARBURST: {bound: ['1', '0'], name: dma_axi_arburst}
-        ARID: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_arid}
-        ARLEN: {bound: ['7', '0'], name: dma_axi_arlen}
-        ARPROT: {bound: ['2', '0'], name: dma_axi_arprot}
-        ARSIZE: {bound: ['2', '0'], name: dma_axi_arsize}
-        ARVALID: {name: dma_axi_arvalid}
-        AWADDR: {bound: ['31', '0'], name: dma_axi_awaddr}
-        AWBURST: {bound: ['1', '0'], name: dma_axi_awburst}
-        AWID: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_awid}
-        AWLEN: {bound: ['7', '0'], name: dma_axi_awlen}
-        AWPROT: {bound: ['2', '0'], name: dma_axi_awprot}
-        AWSIZE: {bound: ['2', '0'], name: dma_axi_awsize}
-        AWVALID: {name: dma_axi_awvalid}
-        BREADY: {name: dma_axi_bready}
-        RREADY: {name: dma_axi_rready}
-        WDATA: {bound: ['63', '0'], name: dma_axi_wdata}
-        WLAST: {name: dma_axi_wlast}
-        WSTRB: {bound: ['7', '0'], name: dma_axi_wstrb}
-        WVALID: {name: dma_axi_wvalid}
+        araddr: {bound: ['31', '0'], name: dma_axi_araddr}
+        arburst: {bound: ['1', '0'], name: dma_axi_arburst}
+        arid: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_arid}
+        arlen: {bound: ['7', '0'], name: dma_axi_arlen}
+        arprot: {bound: ['2', '0'], name: dma_axi_arprot}
+        arsize: {bound: ['2', '0'], name: dma_axi_arsize}
+        arvalid: {name: dma_axi_arvalid}
+        awaddr: {bound: ['31', '0'], name: dma_axi_awaddr}
+        awburst: {bound: ['1', '0'], name: dma_axi_awburst}
+        awid: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_awid}
+        awlen: {bound: ['7', '0'], name: dma_axi_awlen}
+        awprot: {bound: ['2', '0'], name: dma_axi_awprot}
+        awsize: {bound: ['2', '0'], name: dma_axi_awsize}
+        awvalid: {name: dma_axi_awvalid}
+        bready: {name: dma_axi_bready}
+        rready: {name: dma_axi_rready}
+        wdata: {bound: ['63', '0'], name: dma_axi_wdata}
+        wlast: {name: dma_axi_wlast}
+        wstrb: {bound: ['7', '0'], name: dma_axi_wstrb}
+        wvalid: {name: dma_axi_wvalid}
       out:
-        ARREADY: {name: dma_axi_arready}
-        AWREADY: {name: dma_axi_awready}
-        BID: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_bid}
-        BRESP: {bound: ['1', '0'], name: dma_axi_bresp}
-        BVALID: {name: dma_axi_bvalid}
-        RDATA: {bound: ['63', '0'], name: dma_axi_rdata}
-        RID: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_rid}
-        RLAST: {name: dma_axi_rlast}
-        RRESP: {bound: ['1', '0'], name: dma_axi_rresp}
-        RVALID: {name: dma_axi_rvalid}
-        WREADY: {name: dma_axi_wready}
+        arready: {name: dma_axi_arready}
+        awready: {name: dma_axi_awready}
+        bid: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_bid}
+        bresp: {bound: ['1', '0'], name: dma_axi_bresp}
+        bvalid: {name: dma_axi_bvalid}
+        rdata: {bound: ['63', '0'], name: dma_axi_rdata}
+        rid: {bound: [pt.DMA_BUS_TAG-1, '0'], name: dma_axi_rid}
+        rlast: {name: dma_axi_rlast}
+        rresp: {bound: ['1', '0'], name: dma_axi_rresp}
+        rvalid: {name: dma_axi_rvalid}
+        wready: {name: dma_axi_wready}
     type:
       library: libdefault
       name: AXI4

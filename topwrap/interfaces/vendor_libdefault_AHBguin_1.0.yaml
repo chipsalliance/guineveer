@@ -6,21 +6,21 @@ id:
 signals:
   optional:
     in:
-      HRDATA: hrdata
-      HREADYOUT: hreadyout
-      HRESP: hresp
+      hrdata: hrdata
+      hreadyout: hreadyout
+      hresp: hresp
     inout: {}
     out:
-      HADDR: haddr
-      HBURST: hburst
-      HMASTLOCK: hmastlock
-      HPROT: hprot
-      HSEL: hsel
-      HSIZE: hsize
-      HTRANS: htrans
-      HWDATA: hwdata
-      HWRITE: hwrite
-      HWSTRB: hwstrb
+      haddr: haddr
+      hburst: hburst
+      hmastlock: hmastlock
+      hprot: hprot
+      hsel: hsel
+      hsize: hsize
+      htrans: htrans
+      hwdata: hwdata
+      hwrite: hwrite
+      hwstrb: hwstrb
   required:
     in: {}
     inout: {}

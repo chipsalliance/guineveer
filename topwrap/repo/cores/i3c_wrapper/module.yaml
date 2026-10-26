@@ -19,43 +19,43 @@ interfaces:
     reset: i3c
     signals:
       in:
-        ARADDR: {bound: [AxiAddrWidth-1, '0'], name: araddr_i}
-        ARBURST: {bound: ['1', '0'], name: arburst_i}
-        ARID: {bound: [AxiIdWidth-1, '0'], name: arid_i}
-        ARLEN: {bound: ['7', '0'], name: arlen_i}
-        ARLOCK: {name: arlock_i}
-        ARSIZE: {bound: ['2', '0'], name: arsize_i}
-        ARUSER: {bound: [AxiUserWidth-1, '0'], name: aruser_i}
-        ARVALID: {name: arvalid_i}
-        AWADDR: {bound: [AxiAddrWidth-1, '0'], name: awaddr_i}
-        AWBURST: {bound: ['1', '0'], name: awburst_i}
-        AWID: {bound: [AxiIdWidth-1, '0'], name: awid_i}
-        AWLEN: {bound: ['7', '0'], name: awlen_i}
-        AWLOCK: {name: awlock_i}
-        AWSIZE: {bound: ['2', '0'], name: awsize_i}
-        AWUSER: {bound: [AxiUserWidth-1, '0'], name: awuser_i}
-        AWVALID: {name: awvalid_i}
-        BREADY: {name: bready_i}
-        RREADY: {name: rready_i}
-        WDATA: {bound: [AxiDataWidth-1, '0'], name: wdata_i}
-        WLAST: {name: wlast_i}
-        WSTRB: {bound: [AxiDataWidth/8-1, '0'], name: wstrb_i}
-        WUSER: {bound: [AxiUserWidth-1, '0'], name: wuser_i}
-        WVALID: {name: wvalid_i}
+        araddr: {bound: [AxiAddrWidth-1, '0'], name: araddr_i}
+        arburst: {bound: ['1', '0'], name: arburst_i}
+        arid: {bound: [AxiIdWidth-1, '0'], name: arid_i}
+        arlen: {bound: ['7', '0'], name: arlen_i}
+        arlock: {name: arlock_i}
+        arsize: {bound: ['2', '0'], name: arsize_i}
+        aruser: {bound: [AxiUserWidth-1, '0'], name: aruser_i}
+        arvalid: {name: arvalid_i}
+        awaddr: {bound: [AxiAddrWidth-1, '0'], name: awaddr_i}
+        awburst: {bound: ['1', '0'], name: awburst_i}
+        awid: {bound: [AxiIdWidth-1, '0'], name: awid_i}
+        awlen: {bound: ['7', '0'], name: awlen_i}
+        awlock: {name: awlock_i}
+        awsize: {bound: ['2', '0'], name: awsize_i}
+        awuser: {bound: [AxiUserWidth-1, '0'], name: awuser_i}
+        awvalid: {name: awvalid_i}
+        bready: {name: bready_i}
+        rready: {name: rready_i}
+        wdata: {bound: [AxiDataWidth-1, '0'], name: wdata_i}
+        wlast: {name: wlast_i}
+        wstrb: {bound: [AxiDataWidth/8-1, '0'], name: wstrb_i}
+        wuser: {bound: [AxiUserWidth-1, '0'], name: wuser_i}
+        wvalid: {name: wvalid_i}
       out:
-        ARREADY: {name: arready_o}
-        AWREADY: {name: awready_o}
-        BID: {bound: [AxiIdWidth-1, '0'], name: bid_o}
-        BRESP: {bound: [1, '0'], name: bresp_o}
-        BUSER: {bound: [AxiUserWidth-1, '0'], name: buser_o}
-        BVALID: {name: bvalid_o}
-        RDATA: {bound: [AxiDataWidth-1, '0'], name: rdata_o}
-        RID: {bound: [AxiIdWidth-1, '0'], name: rid_o}
-        RLAST: {name: rlast_o}
-        RRESP: {bound: ['1', '0'], name: rresp_o}
-        RUSER: {bound: [AxiUserWidth-1, '0'], name: ruser_o}
-        RVALID: {name: rvalid_o}
-        WREADY: {name: wready_o}
+        arready: {name: arready_o}
+        awready: {name: awready_o}
+        bid: {bound: [AxiIdWidth-1, '0'], name: bid_o}
+        bresp: {bound: [1, '0'], name: bresp_o}
+        buser: {bound: [AxiUserWidth-1, '0'], name: buser_o}
+        bvalid: {name: bvalid_o}
+        rdata: {bound: [AxiDataWidth-1, '0'], name: rdata_o}
+        rid: {bound: [AxiIdWidth-1, '0'], name: rid_o}
+        rlast: {name: rlast_o}
+        rresp: {bound: ['1', '0'], name: rresp_o}
+        ruser: {bound: [AxiUserWidth-1, '0'], name: ruser_o}
+        rvalid: {name: rvalid_o}
+        wready: {name: wready_o}
     type:
       library: libdefault
       name: AXI4

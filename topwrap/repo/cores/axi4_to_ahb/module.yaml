@@ -21,17 +21,17 @@ interfaces:
     reset: bridge
     signals:
       in:
-        HRDATA: {bound: ['63', '0'], name: ahb_hrdata}
-        HRESP: {name: ahb_hresp}
+        hrdata: {bound: ['63', '0'], name: ahb_hrdata}
+        hresp: {name: ahb_hresp}
       out:
-        HADDR: {bound: ['31', '0'], name: ahb_haddr}
-        HBURST: {bound: ['2', '0'], name: ahb_hburst}
-        HMASTLOCK: {name: ahb_hmastlock}
-        HPROT: {bound: ['3', '0'], name: ahb_hprot}
-        HSIZE: {bound: ['2', '0'], name: ahb_hsize}
-        HTRANS: {bound: ['1', '0'], name: ahb_htrans}
-        HWDATA: {bound: ['63', '0'], name: ahb_hwdata}
-        HWRITE: {name: ahb_hwrite}
+        haddr: {bound: ['31', '0'], name: ahb_haddr}
+        hburst: {bound: ['2', '0'], name: ahb_hburst}
+        hmastlock: {name: ahb_hmastlock}
+        hprot: {bound: ['3', '0'], name: ahb_hprot}
+        hsize: {bound: ['2', '0'], name: ahb_hsize}
+        htrans: {bound: ['1', '0'], name: ahb_htrans}
+        hwdata: {bound: ['63', '0'], name: ahb_hwdata}
+        hwrite: {name: ahb_hwrite}
     type:
       library: libdefault
       name: AHBguin
@@ -45,34 +45,34 @@ interfaces:
     size: 0x1000
     signals:
       in:
-        ARADDR: {bound: ['31', '0'], name: axi_araddr}
-        ARID: {bound: [TAG-1, '0'], name: axi_arid}
-        ARPROT: {bound: ['2', '0'], name: axi_arprot}
-        ARSIZE: {bound: ['2', '0'], name: axi_arsize}
-        ARVALID: {name: axi_arvalid}
-        AWADDR: {bound: ['31', '0'], name: axi_awaddr}
-        AWID: {bound: [TAG-1, '0'], name: axi_awid}
-        AWPROT: {bound: ['2', '0'], name: axi_awprot}
-        AWSIZE: {bound: ['2', '0'], name: axi_awsize}
-        AWVALID: {name: axi_awvalid}
-        BREADY: {name: axi_bready}
-        RREADY: {name: axi_rready}
-        WDATA: {bound: ['63', '0'], name: axi_wdata}
-        WLAST: {name: axi_wlast}
-        WSTRB: {bound: ['7', '0'], name: axi_wstrb}
-        WVALID: {name: axi_wvalid}
+        araddr: {bound: ['31', '0'], name: axi_araddr}
+        arid: {bound: [TAG-1, '0'], name: axi_arid}
+        arprot: {bound: ['2', '0'], name: axi_arprot}
+        arsize: {bound: ['2', '0'], name: axi_arsize}
+        arvalid: {name: axi_arvalid}
+        awaddr: {bound: ['31', '0'], name: axi_awaddr}
+        awid: {bound: [TAG-1, '0'], name: axi_awid}
+        awprot: {bound: ['2', '0'], name: axi_awprot}
+        awsize: {bound: ['2', '0'], name: axi_awsize}
+        awvalid: {name: axi_awvalid}
+        bready: {name: axi_bready}
+        rready: {name: axi_rready}
+        wdata: {bound: ['63', '0'], name: axi_wdata}
+        wlast: {name: axi_wlast}
+        wstrb: {bound: ['7', '0'], name: axi_wstrb}
+        wvalid: {name: axi_wvalid}
       out:
-        ARREADY: {name: axi_arready}
-        AWREADY: {name: axi_awready}
-        BID: {bound: [TAG-1, '0'], name: axi_bid}
-        BRESP: {bound: ['1', '0'], name: axi_bresp}
-        BVALID: {name: axi_bvalid}
-        RDATA: {bound: ['63', '0'], name: axi_rdata}
-        RID: {bound: [TAG-1, '0'], name: axi_rid}
-        RLAST: {name: axi_rlast}
-        RRESP: {bound: ['1', '0'], name: axi_rresp}
-        RVALID: {name: axi_rvalid}
-        WREADY: {name: axi_wready}
+        arready: {name: axi_arready}
+        awready: {name: axi_awready}
+        bid: {bound: [TAG-1, '0'], name: axi_bid}
+        bresp: {bound: ['1', '0'], name: axi_bresp}
+        bvalid: {name: axi_bvalid}
+        rdata: {bound: ['63', '0'], name: axi_rdata}
+        rid: {bound: [TAG-1, '0'], name: axi_rid}
+        rlast: {name: axi_rlast}
+        rresp: {bound: ['1', '0'], name: axi_rresp}
+        rvalid: {name: axi_rvalid}
+        wready: {name: axi_wready}
     type:
       library: libdefault
       name: AXI4

@@ -19,51 +19,51 @@ interfaces:
     reset: mem
     signals:
       in:
-        ARADDR: {bound: ['31', '0'], name: s_axi_sram_araddr}
-        ARBURST: {name: s_axi_sram_arburst}
-        ARCACHE: {name: s_axi_sram_arcache}
-        ARID: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_arid}
-        ARLEN: {name: s_axi_sram_arlen}
-        ARLOCK: {name: s_axi_sram_arlock}
-        ARPROT: {name: s_axi_sram_arprot}
-        ARQOS: {name: s_axi_sram_arqos}
-        ARREGION: {name: s_axi_sram_arregion}
-        ARSIZE: {name: s_axi_sram_arsize}
-        ARUSER: {name: s_axi_sram_aruser}
-        ARVALID: {name: s_axi_sram_arvalid}
-        AWADDR: {bound: ['31', '0'], name: s_axi_sram_awaddr}
-        AWBURST: {name: s_axi_sram_awburst}
-        AWCACHE: {name: s_axi_sram_awcache}
-        AWID: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_awid}
-        AWLEN: {name: s_axi_sram_awlen}
-        AWLOCK: {name: s_axi_sram_awlock}
-        AWPROT: {name: s_axi_sram_awprot}
-        AWQOS: {name: s_axi_sram_awqos}
-        AWREGION: {name: s_axi_sram_awregion}
-        AWSIZE: {name: s_axi_sram_awsize}
-        AWUSER: {name: s_axi_sram_awuser}
-        AWVALID: {name: s_axi_sram_awvalid}
-        BREADY: {name: s_axi_sram_bready}
-        RREADY: {name: s_axi_sram_rready}
-        WDATA: {bound: ['63', '0'], name: s_axi_sram_wdata}
-        WLAST: {name: s_axi_sram_wlast}
-        WSTRB: {bound: ['7', '0'], name: s_axi_sram_wstrb}
-        WUSER: {name: s_axi_sram_wuser}
-        WVALID: {name: s_axi_sram_wvalid}
+        araddr: {bound: ['31', '0'], name: s_axi_sram_araddr}
+        arburst: {name: s_axi_sram_arburst}
+        arcache: {name: s_axi_sram_arcache}
+        arid: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_arid}
+        arlen: {name: s_axi_sram_arlen}
+        arlock: {name: s_axi_sram_arlock}
+        arprot: {name: s_axi_sram_arprot}
+        arqos: {name: s_axi_sram_arqos}
+        arregion: {name: s_axi_sram_arregion}
+        arsize: {name: s_axi_sram_arsize}
+        aruser: {name: s_axi_sram_aruser}
+        arvalid: {name: s_axi_sram_arvalid}
+        awaddr: {bound: ['31', '0'], name: s_axi_sram_awaddr}
+        awburst: {name: s_axi_sram_awburst}
+        awcache: {name: s_axi_sram_awcache}
+        awid: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_awid}
+        awlen: {name: s_axi_sram_awlen}
+        awlock: {name: s_axi_sram_awlock}
+        awprot: {name: s_axi_sram_awprot}
+        awqos: {name: s_axi_sram_awqos}
+        awregion: {name: s_axi_sram_awregion}
+        awsize: {name: s_axi_sram_awsize}
+        awuser: {name: s_axi_sram_awuser}
+        awvalid: {name: s_axi_sram_awvalid}
+        bready: {name: s_axi_sram_bready}
+        rready: {name: s_axi_sram_rready}
+        wdata: {bound: ['63', '0'], name: s_axi_sram_wdata}
+        wlast: {name: s_axi_sram_wlast}
+        wstrb: {bound: ['7', '0'], name: s_axi_sram_wstrb}
+        wuser: {name: s_axi_sram_wuser}
+        wvalid: {name: s_axi_sram_wvalid}
       out:
-        ARREADY: {name: s_axi_sram_arready}
-        AWREADY: {name: s_axi_sram_awready}
-        BID: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_bid}
-        BRESP: {name: s_axi_sram_bresp}
-        BUSER: {name: s_axi_sram_buser}
-        BVALID: {name: s_axi_sram_bvalid}
-        RDATA: {bound: ['63', '0'], name: s_axi_sram_rdata}
-        RID: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_rid}
-        RLAST: {name: s_axi_sram_rlast}
-        RRESP: {name: s_axi_sram_rresp}
-        RUSER: {name: s_axi_sram_ruser}
-        RVALID: {name: s_axi_sram_rvalid}
-        WREADY: {name: s_axi_sram_wready}
+        arready: {name: s_axi_sram_arready}
+        awready: {name: s_axi_sram_awready}
+        bid: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_bid}
+        bresp: {name: s_axi_sram_bresp}
+        buser: {name: s_axi_sram_buser}
+        bvalid: {name: s_axi_sram_bvalid}
+        rdata: {bound: ['63', '0'], name: s_axi_sram_rdata}
+        rid: {bound: [ID_WIDTH-1, '0'], name: s_axi_sram_rid}
+        rlast: {name: s_axi_sram_rlast}
+        rresp: {name: s_axi_sram_rresp}
+        ruser: {name: s_axi_sram_ruser}
+        rvalid: {name: s_axi_sram_rvalid}
+        wready: {name: s_axi_sram_wready}
     type:
       library: libdefault
       name: AXI4

@@ -117,7 +117,7 @@ regenerate_tw_repo: $(SOC_WRAPPER_DEPS) $(VERILOG_CORE_SOURCES) $(VERILOG_INCLUD
 	cp -r $(TW_DIR)/interfaces $(TW_REPO_DIR)
 
 	topwrap repo parse $(TW_REPO) $(VEER_SNAPSHOT)/common_defines.vh $(RV_ROOT)/design/lib/el2_mem_if.sv \
-		$(RV_ROOT)/design/el2_veer_wrapper.sv $(TW_PARSE_FLAGS)
+		$(RV_ROOT)/design/el2_veer_wrapper.sv $(TW_PARSE_FLAGS) -e skip
 	topwrap repo parse $(TW_REPO) $(TW_AXI_PREREQ_SRCS) $(HW_DIR)/axi_cdc_wrapper.sv $(TW_PARSE_FLAGS)
 	topwrap repo parse $(TW_REPO) $(TW_AXI_PREREQ_SRCS) $(HW_DIR)/sram_wrapper.sv $(TW_PARSE_FLAGS)
 	topwrap repo parse $(TW_REPO) $(SCRIPT_DIR)/design/src/ipxact/AHBguin.xml $(SCRIPT_DIR)/design/src/ipxact/uart_wrapper.xml --frontend ipxact -e skip

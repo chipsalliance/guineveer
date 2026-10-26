@@ -14,7 +14,7 @@
 
     <ipxact:ports>
         <ipxact:port>
-            <ipxact:logicalName>HADDR</ipxact:logicalName>
+            <ipxact:logicalName>haddr</ipxact:logicalName>
             <ipxact:wire>
                 <ipxact:qualifier>
                     <ipxact:isAddress>true</ipxact:isAddress>
@@ -31,7 +31,7 @@
         </ipxact:port>
 
         <ipxact:port>
-            <ipxact:logicalName>HSIZE</ipxact:logicalName>
+            <ipxact:logicalName>hsize</ipxact:logicalName>
             <ipxact:wire>
                 <ipxact:onInitiator>
                     <ipxact:presence>optional</ipxact:presence>
@@ -45,7 +45,7 @@
         </ipxact:port>
 
         <ipxact:port>
-            <ipxact:logicalName>HTRANS</ipxact:logicalName>
+            <ipxact:logicalName>htrans</ipxact:logicalName>
             <ipxact:wire>
                 <ipxact:onInitiator>
                     <ipxact:presence>optional</ipxact:presence>
@@ -59,114 +59,114 @@
         </ipxact:port>
 
         <ipxact:port>
-            <ipxact:logicalName>HWDATA</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:qualifier>
-                    <ipxact:isData>true</ipxact:isData>
-                </ipxact:qualifier>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HWSTRB</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HWRITE</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HBURST</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HMASTLOCK</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HPROT</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HSEL</ipxact:logicalName>
-            <ipxact:wire>
-                <ipxact:onInitiator>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>out</ipxact:direction>
-                </ipxact:onInitiator>
-                <ipxact:onTarget>
-                    <ipxact:presence>optional</ipxact:presence>
-                    <ipxact:direction>in</ipxact:direction>
-                </ipxact:onTarget>
-            </ipxact:wire>
-        </ipxact:port>
-
-        <ipxact:port>
-            <ipxact:logicalName>HRDATA</ipxact:logicalName>
+            <ipxact:logicalName>hwdata</ipxact:logicalName>
             <ipxact:wire>
                 <ipxact:qualifier>
                     <ipxact:isData>true</ipxact:isData>
                 </ipxact:qualifier>
                 <ipxact:onInitiator>
                     <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hwstrb</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hwrite</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hburst</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hmastlock</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hprot</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hsel</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>out</ipxact:direction>
+                </ipxact:onInitiator>
+                <ipxact:onTarget>
+                    <ipxact:presence>optional</ipxact:presence>
+                    <ipxact:direction>in</ipxact:direction>
+                </ipxact:onTarget>
+            </ipxact:wire>
+        </ipxact:port>
+
+        <ipxact:port>
+            <ipxact:logicalName>hrdata</ipxact:logicalName>
+            <ipxact:wire>
+                <ipxact:qualifier>
+                    <ipxact:isData>true</ipxact:isData>
+                </ipxact:qualifier>
+                <ipxact:onInitiator>
+                    <ipxact:presence>optional</ipxact:presence>
                     <ipxact:direction>in</ipxact:direction>
                 </ipxact:onInitiator>
                 <ipxact:onTarget>
@@ -177,7 +177,7 @@
         </ipxact:port>
 
         <ipxact:port>
-            <ipxact:logicalName>HREADYOUT</ipxact:logicalName>
+            <ipxact:logicalName>hreadyout</ipxact:logicalName>
             <ipxact:wire>
                 <ipxact:onInitiator>
                     <ipxact:presence>optional</ipxact:presence>
@@ -191,7 +191,7 @@
         </ipxact:port>
 
         <ipxact:port>
-            <ipxact:logicalName>HRESP</ipxact:logicalName>
+            <ipxact:logicalName>hresp</ipxact:logicalName>
             <ipxact:wire>
                 <ipxact:onInitiator>
                     <ipxact:presence>optional</ipxact:presence>

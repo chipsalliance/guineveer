@@ -20,14 +20,14 @@ interfaces:
     reset: uart
     signals:
       in:
-        HADDR: {bound: ['31', '0'], name: haddr_i}
-        HSIZE: {bound: ['2', '0'], name: hsize_i}
-        HTRANS: {bound: ['1', '0'], name: htrans_i}
-        HWDATA: {bound: ['63', '0'], name: hwdata_i}
-        HWRITE: {name: hwrite_i}
+        haddr: {bound: ['31', '0'], name: haddr_i}
+        hsize: {bound: ['2', '0'], name: hsize_i}
+        htrans: {bound: ['1', '0'], name: htrans_i}
+        hwdata: {bound: ['63', '0'], name: hwdata_i}
+        hwrite: {name: hwrite_i}
       out:
-        HRDATA: {bound: ['63', '0'], name: hrdata_o}
-        HRESP: {name: hresp_o}
+        hrdata: {bound: ['63', '0'], name: hrdata_o}
+        hresp: {name: hresp_o}
     type:
       library: libdefault
       name: AHBguin
